@@ -8,12 +8,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
   <body>
+    <h1 id="header">Count</h1>
+    <p id="count">0</p>
     <script>
       let clickLen = 0;
       $(document).on("click", function () {
         clickLen += 1;
         const sound1 = new Audio("JaiShreeRam.mp3");
-        const playSound = function () {
+        var playSound = function () {
           if (clickLen === 108) {
             sound1.play();
             clickLen = 0;
@@ -21,6 +23,8 @@
         };
 
         playSound(); // Invoke playSound function
+        document.getElementById("count").innerHTML = clickLen;
+        console.log("clicked", clickLen);
       });
     </script>
   </body>
